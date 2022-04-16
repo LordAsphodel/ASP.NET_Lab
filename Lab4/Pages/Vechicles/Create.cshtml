@@ -1,0 +1,61 @@
+﻿@page
+@model Lab4.Pages.Vechicles.CreateModel
+
+@{
+    ViewData["Title"] = ConfigStrings.Add;
+}
+
+<h1>@ConfigStrings.Add</h1>
+
+<h4>@ConfigStrings.Vechicle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VechicleModel.Company" class="control-label"></label>
+                <input asp-for="VechicleModel.Company" class="form-control" />
+                <span asp-validation-for="VechicleModel.Company" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VechicleModel.ModelType" class="control-label"></label>
+                <input asp-for="VechicleModel.ModelType" class="form-control" />
+                <span asp-validation-for="VechicleModel.ModelType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VechicleModel.ReleaseDate" class="control-label"></label>
+                <input asp-for="VechicleModel.ReleaseDate" class="form-control" />
+                <span asp-validation-for="VechicleModel.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VechicleModel.RegistrationNumber" class="control-label"></label>
+                <input asp-for="VechicleModel.RegistrationNumber" class="form-control" />
+                <span asp-validation-for="VechicleModel.RegistrationNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VechicleModel.RegistrationCity" class="control-label"></label>
+                <input asp-for="VechicleModel.RegistrationCity" class="form-control" />
+                <span asp-validation-for="VechicleModel.RegistrationCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VechicleModel.Distance" class="control-label"></label>
+                <input asp-for="VechicleModel.Distance" class="form-control" />
+                <span asp-validation-for="VechicleModel.Distance" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="VechicleModel.WasRepaired" /> @Html.DisplayNameFor(model => model.VechicleModel.WasRepaired)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value=@ConfigStrings.Add class="btn btn-primary" /> | 
+                <a asp-page="Index" class="btn border-top box-shadow my-btn">@ConfigStrings.Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

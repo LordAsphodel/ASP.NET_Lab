@@ -1,0 +1,51 @@
+﻿@page
+@model Lab4.Pages.Movies.DeleteModel
+
+@{
+    ViewData["Title"] = ConfigStrings.Delete;
+}
+
+<h1>@ConfigStrings.Delete</h1>
+
+<h3>@ConfigStrings.DeleteConfirm @ConfigStrings.MovieModel?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieModel.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieModel.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieModel.ReleaseDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieModel.ReleaseDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieModel.Genre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieModel.Genre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieModel.Duration)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieModel.Duration)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieModel.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieModel.Price)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="MovieModel.ID" />
+        <input type="submit" value="@ConfigStrings.Delete" class="btn btn-danger" /> | 
+        <a asp-page="./Index" class="btn border-top box-shadow my-btn">@ConfigStrings.Back</a>
+    </form>
+</div>

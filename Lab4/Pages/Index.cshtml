@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = Config.HomeTabName;
+}
+
+@{string tempstr = ""; }
+<div class="text-center">
+    <h1 class="display-4">@Config.HomeTabName</h1>
+    <p>Здесь будут ссылки на наши таблицы.</p>
+    <p>
+        <div id="table_list">
+            @{ tempstr = "." + @Config.Table1Link;}
+            <br><a asp-page=@tempstr> @Config.Table1</a>
+            @{ tempstr = "." + @Config.Table2Link;}
+            <br><a asp-page=@tempstr> @Config.Table2</a>
+        </div>
+    </p>
+
+    <p><br>Текущие дата и время сервера <b id="datetime">@DateTime.Now</b></p>
+
+    <script src="~/js/ClockTimer.js"></script>
+
+</div>

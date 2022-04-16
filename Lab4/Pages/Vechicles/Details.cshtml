@@ -1,0 +1,62 @@
+﻿@page
+@model Lab4.Pages.Vechicles.DetailsModel
+
+@{
+    ViewData["Title"] = ConfigStrings.Details;
+}
+
+<h1>@ConfigStrings.Details</h1>
+
+<div>
+    <h4>@ConfigStrings.Vechicle</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VechicleModel.Company)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VechicleModel.Company)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VechicleModel.ModelType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VechicleModel.ModelType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VechicleModel.ReleaseDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VechicleModel.ReleaseDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VechicleModel.RegistrationNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VechicleModel.RegistrationNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VechicleModel.RegistrationCity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VechicleModel.RegistrationCity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VechicleModel.Distance)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VechicleModel.Distance)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VechicleModel.WasRepaired)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VechicleModel.WasRepaired)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" class="btn border-top box-shadow my-btn" asp-route-id="@Model.VechicleModel.ID">@ConfigStrings.Edit</a> |
+    <a asp-page="./Index" class="btn border-top box-shadow my-btn">@ConfigStrings.Back</a> |
+    <a asp-page="./Delete" class="btn border-top box-shadow my-btn" asp-route-id="@Model.VechicleModel.ID">@ConfigStrings.Delete</a>
+</div>

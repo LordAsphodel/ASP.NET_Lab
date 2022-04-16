@@ -1,0 +1,50 @@
+﻿@page
+@model Lab4.Pages.Movies.DetailsModel
+
+@{
+    ViewData["Title"] = ConfigStrings.Details;
+}
+
+<h1>@ConfigStrings.Details</h1>
+
+<div>
+    <h4>@(ConfigStrings.MovieModel+"а")</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieModel.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieModel.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieModel.ReleaseDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieModel.ReleaseDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieModel.Genre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieModel.Genre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieModel.Duration)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieModel.Duration)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieModel.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieModel.Price)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" class="btn border-top box-shadow my-btn" asp-route-id="@Model.MovieModel.ID">@ConfigStrings.Edit</a> |
+    <a asp-page="./Index" class="btn border-top box-shadow my-btn">@ConfigStrings.Back</a> |
+    <a asp-page="./Delete" class="btn border-top box-shadow my-btn" asp-route-id="@Model.MovieModel.ID">@ConfigStrings.Delete</a>
+</div>
